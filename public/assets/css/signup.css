@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #c4c4c4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
