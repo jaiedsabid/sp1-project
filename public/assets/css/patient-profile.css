@@ -162,9 +162,24 @@ body {
   body {
     padding-top: 15px;
   }
+
   #container {
     box-shadow: 0 5px 10px #707070;
     border-radius: 5px;
+    width: 400px;
+  }
+
+  #footer {
+    height: 80px;
+  }
+
+  #footer a {
+    margin-top: 5px;
+    height: 22px;
+  }
+
+  .flex-row {
+    flex-flow: row wrap;
   }
 }
 
@@ -176,6 +191,19 @@ body {
 
   #page-title h2 {
     margin: 0;
+  }
+
+  #footer {
+    height: 80px;
+  }
+
+  #footer a {
+    margin-top: 5px;
+    height: 22px;
+  }
+
+  .flex-row {
+    flex-flow: row wrap;
   }
 }
 
