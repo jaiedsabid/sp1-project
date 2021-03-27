@@ -30,14 +30,14 @@
           <p id="age">age</p>
           <p id="email">email</p>
           <p id="mobile">mobile</p>
-          <p id="address">
-            address
-          </p>
+          <p id="address">address</p>
           <p id="problem">problem</p>
         </div>
       </div>
       <div id="footer" class="flex flex-row flex-space-between">
         <a href="#">Medical Reports</a>
+        <a href="#">Edit</a>
+        <a href="#">Remove</a>
         <a href="#">Back</a>
       </div>
     </div>
