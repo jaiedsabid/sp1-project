@@ -159,6 +159,10 @@ a img {
     width: 400px;
   }
 
+  #cards {
+    margin: 60px 0px 190px 0px;
+  }
+
   .flex-row {
     flex-flow: row wrap;
   }
