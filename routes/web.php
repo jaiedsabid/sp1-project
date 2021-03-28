@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\SignupController;
 use \App\Http\Controllers\LogOutController;
+use \App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,6 @@ Route::get('/signup', [SignupController::class, 'index'])->name('signup');
 Route::post('/signup', [SignupController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('doctor.dashboard');
-    })->name('doctor.dashboard');
+    Route::get('/doctor/dashboard', [DoctorController::class, 'index'])->name('doctor.dashboard');
 
 });
