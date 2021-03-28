@@ -13,7 +13,7 @@
         <h2>Dashboard</h2>
       </div>
       <div id="logout-btn">
-        <a href="#">Logout</a>
+        <a href="{{ route('logout') }}">Logout</a>
       </div>
       <div id="cards" class="flex flex-row-wrap flex-space-evenly">
         <div>
