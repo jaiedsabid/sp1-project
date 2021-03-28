@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}" />
   </head>
   <body>
     <div id="container">
@@ -19,14 +19,14 @@
         <div>
           <a href="#">
             <div id="card-1" class="card flex flex-row-wrap flex-align-center">
-              <img src="assets/images/profile.png" alt="Profile" />
+              <img src="{{ asset('assets/images/profile.png') }}" alt="Profile" />
             </div>
           </a>
         </div>
         <div>
           <a href="#">
             <div id="card-1" class="card flex flex-row-wrap flex-align-center">
-              <img src="assets/images/list.png" alt="List" />
+              <img src="{{ asset('assets/images/list.png') }}" alt="List" />
             </div>
           </a>
         </div>
