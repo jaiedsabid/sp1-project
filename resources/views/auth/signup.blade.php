@@ -19,7 +19,8 @@
 
         <div class="form">
 
-            <form method="get">
+            <form method="post">
+                @csrf
                 <div class="form-inp">
                     <input
                         type="text"
@@ -46,7 +47,7 @@
                         type="email"
                         name="email"
                         id="email"
-                        placeholder="Email"
+                        placeholder="example@example.com"
                     />
                 </div>
 

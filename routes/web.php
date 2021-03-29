@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\SignupController;
+use \App\Http\Controllers\LogOutController;
+use \App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect()->route('login');
+})->name('root');
 
-Route::get('/login', function () {
-    return view('pages.login');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'create']);
 
-Route::get('/signup', function () {
-    return view('pages.signup');
-});
+Route::get('/logout', [LogOutController::class, 'index'])->name('logout');
 
-Route::get('/search', function () {
-    return view('pages.search');
+Route::get('/signup', [SignupController::class, 'index'])->name('signup');
+Route::post('/signup', [SignupController::class, 'store']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/doctor/dashboard', [DoctorController::class, 'index'])->name('doctor.dashboard');
+
 });
