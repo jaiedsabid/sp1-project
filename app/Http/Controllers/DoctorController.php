@@ -44,6 +44,12 @@ class DoctorController extends Controller
         //
     }
 
+    public function patient_list()
+    {
+        $user = Auth::user();
+        $patients = $user->patients;
+        return view('doctor.patient-list')->with('patients', $patients);
+    }
     /**
      * Display the specified resource.
      *

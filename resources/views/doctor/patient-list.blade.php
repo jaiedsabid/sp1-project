@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patients list</title>
-    <link rel="stylesheet" href="assets/css/patient-list.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/patient-list.css') }}" />
   </head>
   <body>
     <div id="container">
@@ -25,26 +25,19 @@
             </tr>
           </thead>
           <tbody>
+          @foreach($patients as $patient)
             <tr>
-              <td><a href="#">1</a></td>
-              <td><a href="#">A</a></td>
-              <td><a href="#">012345678911</a></td>
+              <td>
+                  <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->id }}</a>
+              </td>
+              <td>
+                  <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->name }}</a>
+              </td>
+              <td>
+                  <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->mobile }}</a>
+              </td>
             </tr>
-            <tr>
-              <td><a href="#">1</a></td>
-              <td><a href="#">A</a></td>
-              <td><a href="#">012345678911</a></td>
-            </tr>
-            <tr>
-              <td><a href="#">1</a></td>
-              <td><a href="#">A</a></td>
-              <td><a href="#">012345678911</a></td>
-            </tr>
-            <tr>
-              <td><a href="#">1</a></td>
-              <td><a href="#">A</a></td>
-              <td><a href="#">012345678911</a></td>
-            </tr>
+          @endforeach
           </tbody>
         </table>
         <div id="paginate" class="flex flex-center flex-space-evenly">

@@ -25,7 +25,7 @@
           </a>
         </div>
         <div>
-          <a href="#">
+          <a href="{{ route('doctor.patient_list') }}">
             <div id="card-2" class="card flex flex-col flex-align-center flex-center">
               <img src="{{ asset('assets/images/list.png') }}" alt="List" />
                 <p>Patient list</p>

@@ -20,4 +20,9 @@ class User extends Model implements AuthenticatableContract,CanResetPasswordCont
 
     protected $table = 'users';
     public $timestamps = true;
+
+    public function patients()
+    {
+        return $this->hasMany(Patient::class);
+    }
 }
