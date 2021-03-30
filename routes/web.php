@@ -31,5 +31,5 @@ Route::post('/signup', [SignupController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/doctor/dashboard', [DoctorController::class, 'index'])->name('doctor.dashboard');
-
+    Route::get('/doctor/profile', [DoctorController::class, 'profile'])->name('doctor.profile');
 });

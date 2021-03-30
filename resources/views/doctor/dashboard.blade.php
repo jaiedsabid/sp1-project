@@ -17,7 +17,7 @@
       </div>
       <div id="cards" class="flex flex-row-wrap flex-space-evenly">
         <div>
-          <a href="#">
+          <a href="{{ route('doctor.profile') }}">
             <div id="card-1" class="card flex flex-row-wrap flex-align-center">
               <img src="{{ asset('assets/images/profile.png') }}" alt="Profile" />
             </div>
