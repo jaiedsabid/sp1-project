@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Patient;
 
 class DoctorController extends Controller
 {
@@ -47,7 +48,7 @@ class DoctorController extends Controller
     public function patient_list()
     {
         $user = Auth::user();
-        $patients = $user->patients;
+        $patients = $user->patients()->paginate(10);
         return view('doctor.patient-list')->with('patients', $patients);
     }
     /**
@@ -58,7 +59,8 @@ class DoctorController extends Controller
      */
     public function show($id)
     {
-        //
+        $patient = Patient::find($id);
+        return view('doctor.patient-profile')->with('patient', $patient);
     }
 
     /**
@@ -92,6 +94,6 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

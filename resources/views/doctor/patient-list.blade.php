@@ -13,7 +13,7 @@
         <h2>Patients list</h2>
       </div>
       <div id="back-btn">
-        <a href="#">Back</a>
+        <a href="{{ route('doctor.dashboard') }}">Back</a>
       </div>
       <div id="list">
         <table>
@@ -41,8 +41,8 @@
           </tbody>
         </table>
         <div id="paginate" class="flex flex-center flex-space-evenly">
-          <a href="#"><< Prev</a>
-          <a href="#">Next >></a>
+          <a href="{{ $patients->previousPageUrl() }}"><< Prev</a>
+          <a href="{{ $patients->nextPageUrl() }}">Next >></a>
         </div>
       </div>
     </div>
