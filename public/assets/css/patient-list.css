@@ -65,6 +65,10 @@
   margin-top: 15px;
 }
 
+.msg {
+    font-weight: bold;
+}
+
 /* Custom CSS */
 
 body {
@@ -136,7 +140,7 @@ tr:nth-child(odd) {
 }
 
 #paginate {
-  margin-top: calc(100% - 100px);
+  margin-top: 100px;
 }
 
 #paginate a {
@@ -148,6 +152,10 @@ tr:nth-child(odd) {
 
 #paginate a:hover {
   text-shadow: 2px 2px 2px #005ac7, 0px 0px 1px #005ac7;
+}
+
+#message {
+    margin: 20px 0px 0px 0px;
 }
 
 @media screen and (min-width: 300px) {

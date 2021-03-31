@@ -40,6 +40,9 @@
           @endforeach
           </tbody>
         </table>
+          <div id="message" class="flex flex-center msg">
+              <span>{{ session('message') }}</span>
+          </div>
         <div id="paginate" class="flex flex-center flex-space-evenly">
           <a href="{{ $patients->previousPageUrl() }}"><< Prev</a>
           <a href="{{ $patients->nextPageUrl() }}">Next >></a>

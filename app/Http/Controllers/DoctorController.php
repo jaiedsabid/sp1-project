@@ -94,6 +94,13 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
-        
+        if(Patient::destroy($id))
+        {
+            session()->flash('message', 'Patient removed successfully');
+        }
+        else {
+            session()->flash('message', 'Failed to remove Patient!');
+        }
+        return redirect()->route('doctor.patient_list');
     }
 }
