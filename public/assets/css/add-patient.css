@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+    --primary-border-color: #005ac7;
+    --primary-info-bg-color: #dbcdb5;
+    --primary-label-bg-color: #ffefd2;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-flow: column nowrap;
+}
+
+.flex-row {
+    flex-flow: row nowrap;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
+}
+
+.m-all {
+    margin: 15px;
+}
+
+.m-top {
+    margin-top: 15px;
+}
+
+.m-btm {
+    margin-top: 15px;
+}
+
+.m-left {
+    margin-top: 15px;
+}
+
+.m-right {
+    margin-top: 15px;
+}
+
+/* Custom CSS */
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    max-width: 1024px;
+    width: 320px;
+}
+
+#page-title {
+    padding: 15px auto;
+}
+
+#page-title h2 {
+    padding: 6px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 22px;
+    border: 12px solid var(--primary-border-color);
+    border-bottom: 18px solid var(--primary-border-color);
+}
+
+
+#footer {
+    flex: 1 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #b8a88e;
+}
+
+#footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c2c2c;
+    width: calc(50% - 10px);
+    height: 100%;
+    border-radius: 3px;
+    background-color: #a39681;
+    box-shadow: 0 0 3px #2c2c2c;
+    transition: box-shadow 0.3s ease-out;
+}
+
+#footer a:hover {
+    box-shadow: 0 0 6px #004175;
+}
+
+/* Media Query */
+
+@media screen and (min-width: 426px) {
+    body {
+        padding-top: 15px;
+    }
+
+    #container {
+        box-shadow: 0 5px 10px #707070;
+        border-radius: 5px;
+        width: 400px;
+    }
+
+    #footer {
+        height: 80px;
+    }
+
+    #footer a {
+        margin-top: 5px;
+        height: 22px;
+    }
+
+    .flex-row {
+        flex-flow: row wrap;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 426px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    #page-title h2 {
+        margin: 0;
+    }
+
+    #footer {
+        height: 80px;
+    }
+
+    #footer a {
+        margin-top: 5px;
+        height: 22px;
+    }
+
+    .flex-row {
+        flex-flow: row wrap;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 426px) {
+    #container {
+        width: 100%;
+    }
+}

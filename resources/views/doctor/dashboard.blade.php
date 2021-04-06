@@ -33,10 +33,11 @@
           </a>
         </div>
         <div>
-          <a href="#">
-            <div id="card-3" class="card flex flex-col flex-align-center flex-center">
-              <p>Coming Soon...</p>
-            </div>
+          <a href="{{ route('doctor.add_patient') }}">
+              <div id="card-2" class="card flex flex-col flex-align-center flex-center">
+                  <img src="{{ asset('assets/images/add-user.png') }}" alt="List" />
+                  <p>Add Patient</p>
+              </div>
           </a>
         </div>
         <div>
