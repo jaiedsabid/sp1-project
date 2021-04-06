@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --primary-border-color: #005ac7;
+  --primary-row-even: #dbcdb5;
+  --primary-row-odd: #ffefd2;
+  --primary-table-head: #f8d18a;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-flow: column nowrap;
+}
+
+.flex-row {
+  flex-flow: row nowrap;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.flex-space-evenly {
+  justify-content: space-evenly;
+}
+
+.m-all {
+  margin: 15px;
+}
+
+.m-top {
+  margin-top: 15px;
+}
+
+.m-btm {
+  margin-top: 15px;
+}
+
+.m-left {
+  margin-top: 15px;
+}
+
+.m-right {
+  margin-top: 15px;
+}
+
+.msg {
+    font-weight: bold;
+}
+
+/* Custom CSS */
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  max-width: 1024px;
+  width: 320px;
+}
+
+#page-title {
+  padding: 15px auto;
+}
+
+#page-title h2 {
+  padding: 6px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 22px;
+  border: 12px solid var(--primary-border-color);
+  border-bottom: 18px solid var(--primary-border-color);
+}
+
+#back-btn {
+  margin: 15px 0 15px 3px;
+}
+
+#back-btn a {
+  padding: 5px;
+  border: 1px dashed #5f4618;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #5f4618;
+  font-weight: bold;
+}
+
+#list {
+  margin-top: 25px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  padding: 8px 0px;
+  background-color: var(--primary-table-head);
+}
+
+td {
+  text-align: center;
+  padding: 8px 0px;
+}
+
+td a {
+  text-decoration: none;
+  color: #000000;
+}
+
+tr:nth-child(even) {
+  background-color: var(--primary-row-even);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--primary-row-odd);
+}
+
+#paginate {
+  margin-top: 100px;
+}
+
+#paginate a {
+  text-decoration: none;
+  color: #5f4618;
+  font-weight: bold;
+  transition: all 0.5s ease-out;
+}
+
+#paginate a:hover {
+  text-shadow: 2px 2px 2px #005ac7, 0px 0px 1px #005ac7;
+}
+
+#message {
+    margin: 20px 0px 0px 0px;
+}
+
+@media screen and (min-width: 300px) {
+  #container {
+    height: calc(100vh - 50px);
+  }
+}
+
+@media screen and (min-width: 426px) {
+  body {
+    padding-top: 15px;
+  }
+  #container {
+    box-shadow: 0 5px 10px #707070;
+    border-radius: 5px;
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 426px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #page-title h2 {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 426px) {
+  #container {
+    width: 100%;
+  }
+}

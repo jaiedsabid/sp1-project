@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\SignupController;
+use \App\Http\Controllers\LogOutController;
+use \App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
+})->name('root');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'create']);
+
+Route::get('/logout', [LogOutController::class, 'index'])->name('logout');
+
+Route::get('/signup', [SignupController::class, 'index'])->name('signup');
+Route::post('/signup', [SignupController::class, 'store']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/doctor/dashboard', [DoctorController::class, 'index'])->name('doctor.dashboard');
+    Route::get('/doctor/profile', [DoctorController::class, 'profile'])->name('doctor.profile');
+    Route::get('/doctor/patient/list', [DoctorController::class, 'patient_list'])->name('doctor.patient_list');
+    Route::get('/doctor/patient/{id}/details', [DoctorController::class, 'show'])->name('doctor.patient_details');
+    Route::get('/doctor/patient/{id}/remove', [DoctorController::class, 'destroy'])->name('doctor.remove_patient');
 });

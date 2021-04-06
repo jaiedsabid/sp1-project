@@ -94,9 +94,11 @@
   .buttons {
     width: 100%;
     padding: 5px;
-    display: flex;
+    display: flex ;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding-left: 14em;
+
   }
 
   .buttons input {
@@ -104,9 +106,11 @@
     margin-top: 18px;
     width: var(--btn-width-primary);
     height: var(--btn-height-primaty);
-    background-color: var(--primary-color);
-    color: #ffffff;
+    background-color: white;
+    color: #83B1BE;
     font-weight: bold;
+    border-color: #83B1BE;
+    border-color: 10px;
     border-radius: 0;
     transition: background-color 0.5s ease-out;
   }
@@ -178,6 +182,7 @@
     }
   }
   .doctor{
+      display: inline-block;
       border: 10px solid #006888;
       width: 100%;
       height: 3.5 em;
@@ -205,3 +210,21 @@
     border-radius: 2px;
     background-color: lightgrey;
   }
+
+
+   .sub-continer{
+       display: flex;
+       justify-content: space-between;
+
+   }
+   .sub-continer div{
+        margin-top: 5em ;
+        padding: 20px;
+    }
+   .box{
+    background-color: #83B1BE;
+    flex-basis: 40%;
+    }
+
+
+

@@ -68,7 +68,7 @@ form > input {
   background-color: var(--input-box-color);
 }
 
-input[name="username"],
+input[name="email"],
 input[name="password"] {
   text-align: center;
 }
@@ -105,6 +105,34 @@ input[name="password"] {
 .buttons input:focus {
   border-radius: 0px;
   outline: none;
+}
+
+.buttons a {
+    cursor: pointer;
+    margin-top: 18px;
+    width: var(--btn-width-primary);
+    height: var(--btn-height-primaty);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 6px;
+    border: 1px #4a5568;
+    outline: 1px solid black;
+    box-shadow: 1px 1px 0px #000000;
+    transition: background-color 0.5s ease-out;
+}
+
+.buttons a:hover {
+    background-color: #008fbb;
+}
+
+.buttons a:active,
+.buttons a:focus {
+    border-radius: 0px;
+    outline: none;
 }
 
 .forget-password {
