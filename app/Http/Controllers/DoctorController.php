@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddPatientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Patient;
@@ -40,9 +41,23 @@ class DoctorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddPatientRequest $request)
     {
-        //
+        $patient = new Patient;
+        $patient->user_id = Auth::user()->id;
+        $patient->name = $request->name;
+        $patient->age = $request->age;
+        $patient->mobile = $request->mobile;
+        $patient->address = $request->address;
+        $patient->problem = $request->problem;
+        if($patient->save())
+        {
+            session()->flash('message', 'Patient added successfully');
+        }
+        else {
+            session()->flash('message', 'Failed to add the patient!');
+        }
+        return back();
     }
 
     public function patient_list()

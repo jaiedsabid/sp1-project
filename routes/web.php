@@ -36,4 +36,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/doctor/patient/{id}/details', [DoctorController::class, 'show'])->name('doctor.patient_details');
     Route::get('/doctor/patient/{id}/remove', [DoctorController::class, 'destroy'])->name('doctor.remove_patient');
     Route::get('/doctor/patient/add', [DoctorController::class, 'create'])->name('doctor.add_patient');
+    Route::post('/doctor/patient/add', [DoctorController::class, 'store']);
 });

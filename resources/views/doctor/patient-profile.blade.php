@@ -33,7 +33,7 @@
           <p id="age">{{ $patient->age }}</p>
           <p id="mobile">{{ $patient->mobile }}</p>
           <p id="address">{{ $patient->address }}</p>
-          <p id="problem">{{ $patient->problem }}</p>
+          <p id="problem">{!! $patient->problem !!}</p>
         </div>
       </div>
       <div id="footer" class="flex flex-row flex-space-between">

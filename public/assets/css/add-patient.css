@@ -49,7 +49,7 @@
 }
 
 .m-top {
-    margin-top: 15px;
+    margin-top: 15px !important;
 }
 
 .m-btm {
@@ -90,6 +90,16 @@ body {
     border-bottom: 18px solid var(--primary-border-color);
 }
 
+.input-group {
+    margin: 0 5px;
+    position: relative;
+}
+
+.pos-right {
+    position: absolute;
+    left: 80px;
+}
+
 
 #footer {
     flex: 1 0 auto;
@@ -113,6 +123,32 @@ body {
 #footer a:hover {
     box-shadow: 0 0 6px #004175;
 }
+
+.button {
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2c2c2c;
+    width: calc(50% - 10px);
+    height: 22px;
+    border-radius: 3px;
+    background-color: #a39681;
+    box-shadow: 0 0 3px #2c2c2c;
+    transition: box-shadow 0.3s ease-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 6px #004175;
+}
+
+.errors {
+    color: red;
+    margin-bottom: 10px;
+}
+
 
 /* Media Query */
 
