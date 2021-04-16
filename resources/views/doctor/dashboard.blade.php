@@ -17,29 +17,32 @@
       </div>
       <div id="cards" class="flex flex-row-wrap flex-space-evenly">
         <div>
-          <a href="#">
-            <div id="card-1" class="card flex flex-row-wrap flex-align-center">
+          <a href="{{ route('doctor.profile') }}">
+            <div id="card-1" class="card flex flex-col flex-align-center flex-center">
               <img src="{{ asset('assets/images/profile.png') }}" alt="Profile" />
+                <p>Profile</p>
             </div>
           </a>
         </div>
         <div>
-          <a href="#">
-            <div id="card-1" class="card flex flex-row-wrap flex-align-center">
+          <a href="{{ route('doctor.patient_list') }}">
+            <div id="card-2" class="card flex flex-col flex-align-center flex-center">
               <img src="{{ asset('assets/images/list.png') }}" alt="List" />
+                <p>Patient list</p>
             </div>
           </a>
         </div>
         <div>
-          <a href="#">
-            <div id="card-1" class="card flex flex-row-wrap flex-align-center">
-              <p>Coming Soon...</p>
-            </div>
+          <a href="{{ route('doctor.add_patient') }}">
+              <div id="card-2" class="card flex flex-col flex-align-center flex-center">
+                  <img src="{{ asset('assets/images/add-user.png') }}" alt="List" />
+                  <p>Add Patient</p>
+              </div>
           </a>
         </div>
         <div>
           <a href="#">
-            <div id="card-1" class="card flex flex-row-wrap flex-align-center">
+            <div id="card-4" class="card flex flex-col flex-align-center flex-center">
               <p>Coming Soon...</p>
             </div>
           </a>

@@ -31,5 +31,10 @@ Route::post('/signup', [SignupController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/doctor/dashboard', [DoctorController::class, 'index'])->name('doctor.dashboard');
-
+    Route::get('/doctor/profile', [DoctorController::class, 'profile'])->name('doctor.profile');
+    Route::get('/doctor/patient/list', [DoctorController::class, 'patient_list'])->name('doctor.patient_list');
+    Route::get('/doctor/patient/{id}/details', [DoctorController::class, 'show'])->name('doctor.patient_details');
+    Route::get('/doctor/patient/{id}/remove', [DoctorController::class, 'destroy'])->name('doctor.remove_patient');
+    Route::get('/doctor/patient/add', [DoctorController::class, 'create'])->name('doctor.add_patient');
+    Route::post('/doctor/patient/add', [DoctorController::class, 'store']);
 });
