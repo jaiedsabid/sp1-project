@@ -18,14 +18,12 @@
       </div>
 
       <div class="form">
-        <form method="post">
-            @csrf
+        <form method="get">
           <input
             type="text"
-            name="email"
-            id="email"
-            value="{{ old('email') }}"
-            placeholder="example@example.com"
+            name="username"
+            id="username"
+            placeholder="User Name"
           />
           <input
             type="password"
@@ -33,28 +31,10 @@
             id="password"
             placeholder="Password"
           />
-            <div id="errors">
-                @foreach($errors->all() as $error)
-                {{ $error }}
-                @endforeach
-            </div>
-            @if(Request::is('adminlogin'))
-
-                <div class="buttons">
-                    <input type="submit" value="Log in" name="submit" />
-                    <a href="{{ route('root') }}">Back</a>
-                </div>
-
-            @endif
-            @if(Request::is('login'))
-
-            <div class="buttons">
-                <input type="submit" value="Log in" name="submit" />
-                <a href="{{ route('signup') }}">Signup</a>
-                <a href="{{ route('root') }}">Back</a>
-            </div>
-            @endif
-
+          <div class="buttons">
+            <input type="submit" value="Log in" name="submit" />
+            <input type="button" value="Sign Up" name="signup" />
+          </div>
         </form>
       </div>
 

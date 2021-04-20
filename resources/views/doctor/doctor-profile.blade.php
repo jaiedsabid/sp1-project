@@ -17,7 +17,7 @@
         <div id="doctor-img" class="flex flex-center">
             <img
                 id="image"
-                src="{{ asset(($user->image != null && $user->image != '' ? $user->image : 'assets/images/person.png')) }}"
+                src="{{ asset(($user->image != null && $user->image != '' ? 'uploads/images/' . $user->image : 'assets/images/person.png')) }}"
                 alt="Doctor Image"
             />
         </div>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div id="footer" class="flex flex-row flex-space-between">
-            <a href="#">Edit</a>
+            <a href="{{ route('doctor.edit_profile') }}">Edit</a>
             <a href="{{ route('doctor.dashboard') }}">Back</a>
         </div>
     </div>

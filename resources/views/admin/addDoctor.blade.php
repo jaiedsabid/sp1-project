@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/signup.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/signup.css')}}" />
   </head>
   <body>
     <div class="container">
         <div class="doctor">
-            <p>{{$page_name}}'s Registration</p>
+            <p>Doctor's Registration</p>
         </div>
 
         <div class="title">
@@ -19,7 +19,7 @@
 
         <div class="form">
 
-            <form method="post"  enctype="multipart/form-data">
+            <form method="post"  enctype="multipart/form-data" action="{{route('admin.storeDoctor')}}">
                 @csrf
                 <div class="form-inp">
                     <input
@@ -94,27 +94,6 @@
                     />
             </div>
 
-
-            {{-- Gender
-            <div class="gender">
-                <div>
-                    <label for="male">Male</label>
-                    <input type="radio" id="male" name="gender" value="male">
-                </div>
-                <div>
-                    <label for="female">Female</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                </div>
-                <div>
-                    <label for="other">Other</label>
-                    <input type="radio" id="other" name="gender" value="other">
-                </div>
-            </div>
-
-            <div class="specialization">
-                <input type="text" name="specialization" id="" placeholder="specialization">
-            </div> --}}
-
             <p>
                 By clicking SignUp you agree to our Terms, Data Policy. You may recive sms notification and
                 can opt out at any time.
@@ -126,7 +105,7 @@
             </div>
             <div class="buttons">
                 <input type="submit" value="Sign Up" name="submit" />
-                <a href="{{ route('login') }}"><input type="button" value="Back" name="signup" /></a>
+               <a href="{{route('admin.addView')}}"><input type="button" value="Back" name="signup" /></a>
             </div>
             </form>
         </div>
