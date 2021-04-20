@@ -38,10 +38,26 @@
                 {{ $error }}
                 @endforeach
             </div>
-          <div class="buttons">
-            <input type="submit" value="Log in" name="submit" />
-            <a href="{{ route('signup') }}">Signup</a>
-          </div>
+            @if(Request::is('adminlogin'))
+
+                <div class="buttons">
+                    <input type="submit" value="Log in" name="submit" />
+                    <a href="{{ route('root') }}">Back</a>
+                </div>
+
+            @endif
+            @if(Request::is('login'))
+
+            <div class="buttons">
+                <input type="submit" value="Log in" name="submit" />
+                <a href="{{ route('signup') }}">Signup</a>
+            </div>
+            <div class="buttons">
+                <a href="{{ route('root') }}">Back</a>
+            </div>
+
+            @endif
+
         </form>
       </div>
 
