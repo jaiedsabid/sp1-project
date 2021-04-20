@@ -49,7 +49,7 @@
 }
 
 .m-top {
-    margin-top: 15px !important;
+    margin-top: 15px;
 }
 
 .m-btm {
@@ -90,18 +90,37 @@ body {
     border-bottom: 18px solid var(--primary-border-color);
 }
 
+
+.input-group:nth-child(odd) {
+    margin-bottom: 12px;
+}
+
 .input-group {
-    margin: 0 5px;
     position: relative;
+    margin: 8px 5px;
+}
+
+.message {
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 5px 2px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.input-group input {
+    position: absolute;
+    left: calc(100% - 55%);
 }
 
 input[type="file"] {
     width: 170px;
-}
-
-.pos-right {
-    position: absolute;
-    left: 80px;
 }
 
 
@@ -117,44 +136,33 @@ input[type="file"] {
     font-weight: bold;
     color: #2c2c2c;
     width: calc(50% - 10px);
-    height: 100%;
     border-radius: 3px;
     background-color: #a39681;
     box-shadow: 0 0 3px #2c2c2c;
     transition: box-shadow 0.3s ease-out;
+}
+
+#footer button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c2c2c;
+    width: calc(50% - 10px);
+    height: 100%;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    background-color: #a39681;
+    box-shadow: 0 0 3px #2c2c2c;
+    transition: box-shadow 0.3s ease-out;
+}
+
+#footer button:hover, a:hover {
+    box-shadow: 0 0 6px #004175;
 }
 
 #footer a:hover {
     box-shadow: 0 0 6px #004175;
 }
-
-.button {
-    margin-top: 5px;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    color: #2c2c2c;
-    width: calc(50% - 10px);
-    height: 22px;
-    border-radius: 3px;
-    background-color: #a39681;
-    box-shadow: 0 0 3px #2c2c2c;
-    transition: box-shadow 0.3s ease-out;
-}
-
-.button:hover {
-    box-shadow: 0 0 6px #004175;
-}
-
-.errors {
-    color: red;
-    margin-bottom: 10px;
-}
-
-
-/* Media Query */
 
 @media screen and (min-width: 426px) {
     body {
@@ -169,6 +177,11 @@ input[type="file"] {
 
     #footer {
         height: 80px;
+    }
+
+    #footer button {
+        margin-top: 5px;
+        height: 22px;
     }
 
     #footer a {
@@ -195,6 +208,11 @@ input[type="file"] {
         height: 80px;
     }
 
+    #footer button {
+        margin-top: 5px;
+        height: 22px;
+    }
+
     #footer a {
         margin-top: 5px;
         height: 22px;
@@ -209,4 +227,6 @@ input[type="file"] {
     #container {
         width: 100%;
     }
+
+
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Patient</title>
+    <title>Edit Patient details</title>
     <link rel="stylesheet" href="{{ asset('assets/css/add-patient.css') }}" />
     <script src="https://cdn.tiny.cloud/1/osifzy9kgs9o918jd7gs07lvovmwsjbapuvonm5r976lrn3k/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
@@ -13,24 +13,24 @@
     <form action="" method="POST" enctype="multipart/form-data" class="flex flex-col">
         @csrf
         <div id="page-title">
-            <h2>Add Patient</h2>
+            <h2>Edit Patient details</h2>
         </div>
         <div id="add-patient">
             <div class="input-group m-top">
                 <label for="name">Name: </label>
-                <input class="pos-right" type="text" name="name" value="{{ old('name') }}">
+                <input class="pos-right" type="text" name="name" value="{{ $patient->name }}">
             </div>
             <div class="input-group m-top">
                 <label for="age">Age: </label>
-                <input class="pos-right" type="text" name="age" value="{{ old('age') }}">
+                <input class="pos-right" type="text" name="age" value="{{ $patient->age }}">
             </div>
             <div class="input-group m-top">
                 <label for="mobile">Mobile: </label>
-                <input class="pos-right" type="text" name="mobile" value="{{ old('mobile') }}">
+                <input class="pos-right" type="text" name="mobile" value="{{ $patient->mobile }}">
             </div>
             <div class="input-group m-top">
                 <label for="address">Address: </label>
-                <input class="pos-right" type="text" name="address" value="{{ old('address') }}">
+                <input class="pos-right" type="text" name="address" value="{{ $patient->address }}">
             </div>
             <div class="input-group m-top">
                 <label for="image">Image: </label>
@@ -38,7 +38,9 @@
             </div>
             <div class="input-group m-top">
                 <label for="name">Problem: </label> <br>
-                <textarea name="problem" id="problem" cols="40" rows="10" value="{{ old('problem') }}"></textarea>
+                <textarea name="problem" id="problem" cols="40" rows="18">
+                    {!!$patient->problem!!}
+                </textarea>
             </div>
         </div>
         <div class="message flex flex-center m-top">
@@ -50,8 +52,8 @@
             </div>
         </div>
         <footer id="footer" class="flex flex-row flex-space-between">
-            <a href="{{ route('doctor.dashboard') }}">Back</a>
-            <input class="button" type="submit" value="Add" name="submit">
+            <a href="{{ route('doctor.patient_list') }}">Back</a>
+            <input class="button" type="submit" value="Update" name="submit">
         </footer>
     </form>
 </div>

@@ -16,7 +16,7 @@
       <div id="patient-img" class="flex flex-center">
         <img id="image"
              src="{{ ($patient->image != null && $patient->image != '' ?
-                    asset('uploads/images') : asset('assets/images/person.png')) }}"
+                    asset('uploads/images/' . $patient->image) : asset('assets/images/person.png')) }}"
              alt="Patient Image"
         />
       </div>
@@ -38,9 +38,9 @@
       </div>
       <div id="footer" class="flex flex-row flex-space-between">
         <a href="#">Medical Reports</a>
-        <a href="#">Edit</a>
+        <a href="{{ route('doctor.edit_patient', $patient->id) }}">Edit</a>
         <a href="{{ route('doctor.remove_patient', $patient->id) }}">Remove</a>
-        <a href="{{ url()->previous() }}">Back</a>
+        <a href="{{ route('doctor.patient_list') }}">Back</a>
       </div>
     </div>
     <script>

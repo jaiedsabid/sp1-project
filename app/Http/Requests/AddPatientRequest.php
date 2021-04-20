@@ -29,6 +29,7 @@ class AddPatientRequest extends FormRequest
             'mobile' => 'required',
             'address' => 'required',
             'problem' => 'required',
+            'image' => 'max:4000|mimes:jpg,png,jpeg'
         ];
     }
 }
