@@ -126,7 +126,7 @@
             </div>
             <div class="buttons">
                 <input type="submit" value="Sign Up" name="submit" />
-                <input type="button" value="Back" name="signup" />
+                <a href="{{ route('login') }}"><input type="button" value="Back" name="signup" /></a>
             </div>
             </form>
         </div>

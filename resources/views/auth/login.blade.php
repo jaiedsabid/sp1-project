@@ -51,11 +51,8 @@
             <div class="buttons">
                 <input type="submit" value="Log in" name="submit" />
                 <a href="{{ route('signup') }}">Signup</a>
-            </div>
-            <div class="buttons">
                 <a href="{{ route('root') }}">Back</a>
             </div>
-
             @endif
 
         </form>
