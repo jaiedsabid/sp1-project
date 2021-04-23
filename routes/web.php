@@ -46,6 +46,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/doctor/patient/{id}/edit', [DoctorController::class, 'update']);
     Route::get('/doctor/patient/add', [DoctorController::class, 'create'])->name('doctor.add_patient');
     Route::post('/doctor/patient/add', [DoctorController::class, 'store']);
+
+    Route::get('/doctor/patient/{id}/prescriptions', [DoctorController::class, 'prescription'])
+        ->name('doctor.prescriptions');
+    Route::get('/doctor/patient/{pid}/prescription/{id}/details', [DoctorController::class, 'prescription_details'])
+        ->name('doctor.prescription_details');
+    Route::get('/doctor/patient/{pid}/prescription/{id}/remove', [DoctorController::class, 'prescription_destroy'])
+        ->name('doctor.prescription_remove');
+    Route::get('/doctor/patient/{pid}/prescription/add', [DoctorController::class, 'prescription_add'])
+        ->name('doctor.prescription_add');
+    Route::post('/doctor/patient/{pid}/prescription/add', [DoctorController::class, 'prescription_store']);
 });
 
 

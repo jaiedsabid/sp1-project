@@ -13,7 +13,7 @@ class CreatePrescriptionTable extends Migration
      */
     public function up()
     {
-        Schema::create('prescription', function (Blueprint $table) {
+        Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')
                 ->constrained('patients')
@@ -21,7 +21,7 @@ class CreatePrescriptionTable extends Migration
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onDelete('cascade');
-            $table->string('prescription');
+            $table->string('prescriptions');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreatePrescriptionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prescription');
+        Schema::dropIfExists('prescriptions');
     }
 }

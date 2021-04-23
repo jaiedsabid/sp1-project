@@ -37,7 +37,7 @@
         </div>
       </div>
       <div id="footer" class="flex flex-row flex-space-between">
-        <a href="#">Medical Reports</a>
+        <a href="{{ route('doctor.prescriptions', $patient->id) }}">Medical Reports</a>
         <a href="{{ route('doctor.edit_patient', $patient->id) }}">Edit</a>
         <a href="{{ route('doctor.remove_patient', $patient->id) }}">Remove</a>
         <a href="{{ route('doctor.patient_list') }}">Back</a>

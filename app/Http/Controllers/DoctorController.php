@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Patient;
+use App\Models\Prescription;
 use Illuminate\Support\Facades\Storage;
 
 class DoctorController extends Controller
@@ -207,5 +208,56 @@ class DoctorController extends Controller
             session()->flash('message', 'Failed to remove Patient!');
         }
         return redirect()->route('doctor.patient_list');
+    }
+
+    public function prescription($id)
+    {
+        $prescriptions = Prescription::where('patient_id', $id)
+            ->paginate(5);
+        return view('doctor.prescription-list')
+            ->with('prescriptions', $prescriptions)
+            ->with('patient_id', $id);
+    }
+
+    public function prescription_details($pid, $id)
+    {
+        $prescription = Prescription::find($id);
+        return view('doctor.prescription-details')
+            ->with('prescription', $prescription)
+            ->with('pid', $pid);
+    }
+
+    public function prescription_add($pid)
+    {
+        return view('doctor.add-prescription')
+            ->with('pid', $pid);
+    }
+
+    public function prescription_store($pid, Request $request)
+    {
+        $doctor_id = Auth::user()->getAuthIdentifier();
+        $prescription = new Prescription;
+        $prescription->user_id = $doctor_id;
+        $prescription->patient_id = $pid;
+        $prescription->prescriptions = $request->prescription;
+
+        if($prescription->save()) {
+            session()->flash('message', 'Prescription Added successfully');
+        } else {
+            session()->flash('message', 'Failed to Add the Prescription');
+        }
+        return back();
+    }
+
+
+
+    public function prescription_destroy($pid, $id)
+    {
+        if(Prescription::destroy($id)) {
+            session()->flash('message', 'Prescription Removed');
+        } else {
+            session()->flash('message', 'Failed to Remove the Prescription!');
+        }
+        return redirect()->route('doctor.prescriptions', $pid);
     }
 }

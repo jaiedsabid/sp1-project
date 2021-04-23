@@ -25,4 +25,9 @@ class User extends Model implements AuthenticatableContract,CanResetPasswordCont
     {
         return $this->hasMany(Patient::class);
     }
+
+    public function prescription()
+    {
+        return $this->hasMany(Prescription::class);
+    }
 }
