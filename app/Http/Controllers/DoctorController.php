@@ -42,7 +42,7 @@ class DoctorController extends Controller
 
         $request->validate([
             'name' => 'required|min:5',
-            'email' => 'required|min:8|max:40|email:rfc|unique:users,email,' . $id . 'id',
+            'email' => 'required|min:8|max:40|email:rfc|unique:users,email,' . $id,
             'password' => 'required|confirmed|min:5|max:20',
             'address' => 'required',
             'mobile' => 'required|numeric',
