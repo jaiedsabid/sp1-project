@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patients list</title>
+    <title>Activity Log</title>
     <link rel="stylesheet" href="{{ asset('assets/css/patient-list.css') }}" />
 </head>
 <body>
 <div id="container">
     <div id="page-title">
-        <h2>Patients list</h2>
+        <h2>Activity Log</h2>
     </div>
     <div id="back-btn">
-        <a href="{{ route('doctor.dashboard') }}">Back</a>
+        <a href="{{ route('admin.dashboard') }}">Back</a>
     </div>
     <div id="list">
         <table>
@@ -21,20 +21,24 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Mobile</th>
+                <th>Login IP</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($patients as $patient)
+            @foreach($doctors as $doctor)
                 <tr>
                     <td>
-                        <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->id }}</a>
+                        {{ $doctor->id }}
                     </td>
                     <td>
-                        <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->name }}</a>
+                        {{ $doctor->name }}
                     </td>
                     <td>
-                        <a href="{{ route('doctor.patient_details', $patient->id) }}">{{ $patient->mobile }}</a>
+                        {{ $doctor->login_ip }}
+                    </td>
+                    <td>
+                        <b><a href="{{ route('admin.remove_doctor', $doctor->id) }}">Remove</a></b>
                     </td>
                 </tr>
             @endforeach
@@ -44,8 +48,8 @@
             <span>{{ session('message') }}</span>
         </div>
         <div id="paginate" class="flex flex-center flex-space-evenly">
-            <a href="{{ $patients->previousPageUrl() }}"><< Prev</a>
-            <a href="{{ $patients->nextPageUrl() }}">Next >></a>
+            <a href="{{ $doctors->previousPageUrl() }}"><< Prev</a>
+            <a href="{{ $doctors->nextPageUrl() }}">Next >></a>
         </div>
     </div>
 </div>

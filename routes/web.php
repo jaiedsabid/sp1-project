@@ -77,7 +77,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/adddoctor',[AdminController::class,'addDoctor'])->name('admin.addDoctor');
     Route::post('/admin/adddoctor',[AdminController::class,'storeDoctor'])->name('admin.storeDoctor');
 
-    //Route::get('/admin/addpatient',[AdminController::class,'addView'])->name('admin.addView');
+    Route::get('/admin/doctor/{id}/remove', [AdminController::class, 'removeDoctor'])->name('admin.remove_doctor');
+    Route::get('/admin/doctors/activity', [AdminController::class, 'doctorsActivity'])->name('admin.doc_activity');
 
     Route::get('/admin/totaluser',[AdminController::class,'totalUser'])->name('admin.totalUser');
 });

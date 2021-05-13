@@ -41,9 +41,10 @@
           </a>
         </div>
         <div>
-          <a href="#">
+          <a href="{{ route('admin.doc_activity') }}">
             <div id="card-4" class="card flex flex-col flex-align-center flex-center">
-              <p>Coming Soon...</p>
+                <img src="{{ asset('assets/images/log.png') }}" alt="List" />
+              <p>Activity Log</p>
             </div>
           </a>
         </div>

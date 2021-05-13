@@ -37,6 +37,8 @@ class LoginController extends Controller
 
         if($user) {
             Auth::login($user);
+            $user->login_ip = $request->ip();
+            $user->save();
             return redirect()->route('doctor.dashboard');
         }
         else {

@@ -98,7 +98,18 @@ class AdminController extends Controller
         return view('admin.total')->with('patientCount',$patientCount)->with('doctorCount',$doctorCount);
     }
 
+    public function removeDoctor(Request $request, $id)
+    {
+        if(User::destroy($id)) {
+            session()->flash('message', 'Doctor Removed Successfully');
+        }
+        return redirect()->route('admin.doc_activity');
+    }
 
-
+    public function doctorsActivity(Request $request)
+    {
+        $doctors = User::simplePaginate(5);
+        return view('admin.activity-log')->with('doctors', $doctors);
+    }
 
 }
