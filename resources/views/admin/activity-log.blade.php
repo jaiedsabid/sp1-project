@@ -21,6 +21,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Last Login At</th>
                 <th>Login IP</th>
                 <th>Action</th>
             </tr>
@@ -33,6 +34,9 @@
                     </td>
                     <td>
                         {{ $doctor->name }}
+                    </td>
+                    <td>
+                        {{ $doctor->last_login_at }}
                     </td>
                     <td>
                         {{ $doctor->login_ip }}

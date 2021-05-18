@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,6 +39,7 @@ class LoginController extends Controller
         if($user) {
             Auth::login($user);
             $user->login_ip = $request->ip();
+            $user->last_login_at = Carbon::now()->toDateTimeString();
             $user->save();
             return redirect()->route('doctor.dashboard');
         }
