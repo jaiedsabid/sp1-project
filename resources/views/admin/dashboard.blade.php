@@ -28,7 +28,7 @@
           <a href="{{ route('admin.totalUser') }}">
             <div id="card-2" class="card flex flex-col flex-align-center flex-center">
               <img src="{{ asset('assets/images/list.png') }}" alt="List" />
-                <p>Patient list</p>
+                <p>User Count</p>
             </div>
           </a>
         </div>

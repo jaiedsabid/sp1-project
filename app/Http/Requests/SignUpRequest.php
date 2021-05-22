@@ -30,7 +30,7 @@ class SignUpRequest extends FormRequest
             'password'=>'required|min:4|max:20',
             'con_password'=>'required_with:password|same:password|min:4|max:20',
             'address'=>'required|max:50',
-            'mobile'=>'required|integer',
+            'mobile'=>'required|numeric',
             'dob'=>'required',
             'image'=>'image|mimes:jpg,bmp,png,jpeg|max:5000',
         ];
