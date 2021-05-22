@@ -39,7 +39,7 @@ class LoginController extends Controller
         if($user) {
             Auth::login($user);
             $user->login_ip = $request->ip();
-            $user->last_login_at = Carbon::now()->toDateTimeString();
+            $user->last_login_at = Carbon::now()->addHours(6);
             $user->save();
             return redirect()->route('doctor.dashboard');
         }
